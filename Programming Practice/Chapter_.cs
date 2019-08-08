@@ -79,13 +79,20 @@ namespace Programming_Practice
             Chapter chapter = dbContext.Chapters.FirstOrDefault(x => x.ID == nudChapterID.Value);
             if (chapter != null)
             {
-                dbContext.Chapters.Remove(chapter);
-                dbContext.SaveChanges();
-                BlankChapter();
-                lblUsersMessage.Text = "Message : Chapter Updated Successfully";
+                if (Prompt.ShowDialog("Library, Progress\r\nRelated to ID = " + chapter.ID + " Name = " + chapter.Chapter_Name))
+                {
+                    dbContext.Chapters.Remove(chapter);
+                    dbContext.SaveChanges();
+                    BlankChapter();
+                    lblChapterMessage.Text = "Message : Chapter Deleted Successfully";
+                }
+                else
+                {
+                    lblChapterMessage.Text = "Message : Chapter with ID = "+ chapter.ID + " not Deleted Successfully";
+                }
             }
             else
-                lblUsersMessage.Text = "Message : Chapter Not Found";
+                lblChapterMessage.Text = "Message : Chapter Not Found";
         }
         private void GvChapter_CellClick(object sender, DataGridViewCellEventArgs e)
         {
