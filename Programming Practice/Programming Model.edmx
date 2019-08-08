@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProgrammingsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProgrammingsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Chapter">
           <Key>
             <PropertyRef Name="ID" />
@@ -72,7 +72,9 @@
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Chapter_Subject">
-          <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
+          <End Role="Subject" Type="Self.Subject" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Chapter" Type="Self.Chapter" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Subject">
@@ -84,7 +86,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Log_Chapter">
-          <End Role="Chapter" Type="Self.Chapter" Multiplicity="1" />
+          <End Role="Chapter" Type="Self.Chapter" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Log" Type="Self.Log" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Chapter">
@@ -96,7 +100,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Log_Type">
-          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="Type" Type="Self.Type" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Log" Type="Self.Log" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Type">
@@ -108,7 +114,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Progress_Log">
-          <End Role="Log" Type="Self.Log" Multiplicity="1" />
+          <End Role="Log" Type="Self.Log" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Log">
@@ -120,7 +128,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Progress_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
@@ -159,8 +169,7 @@
             <End Role="Progress" EntitySet="Progress" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProgrammingsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

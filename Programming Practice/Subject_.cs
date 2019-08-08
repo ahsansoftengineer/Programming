@@ -91,13 +91,21 @@ namespace Programming_Practice
             Subject subject = dbContext.Subjects.FirstOrDefault(x => x.ID == nudSubjectID.Value);
             if (subject != null)
             {
-                dbContext.Subjects.Remove(subject);
-                dbContext.SaveChanges();
-                lblUsersMessage.Text = "Message : Subject Deleted Successfully \r\nNote : All the Chapters and the Test will also be deleted";
+                if (Prompt.ShowDialog("Chapter, Library, Progress\r\nRelated to ID = " + subject.ID + " Name = " + subject.Subject_Name))
+                {
+                    dbContext.Subjects.Remove(subject);
+                    dbContext.SaveChanges();
+                    lblSubjectMessage.Text = "Message : Deleted Successfully";
+                }
+                else
+                {
+                    lblSubjectMessage.Text = "Message : Subject not Deleted";
+                }
             }
             else
             {
-                lblUsersMessage.Text = "Message : Subject Not Inserted \r\nNote : All the Chapters and the Test will also be deleted";
+                lblSubjectMessage.Text = "Message : Subject with ID = " 
+                     + nudSubjectID.Value + " does not Exsist";
             }
         }
         private void GvSubject_CellClick(object sender, DataGridViewCellEventArgs e)

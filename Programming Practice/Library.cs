@@ -9,7 +9,7 @@ namespace Programming_Practice
 {
     public partial class Form1
     {
-        private void SetControlBlank()
+        private void SetLibraryControlBlank()
         {
             combLibraryQuestion.Text = "";
             txtLibraryHint1.Text = "";
@@ -32,6 +32,7 @@ namespace Programming_Practice
         }
         private void FillLibrary(Log log)
         {
+            lblLibraryMessage.Text = "Message : ";
             if (log != null)
             {
                 nudLibraryID.Value = log.ID;
@@ -48,8 +49,8 @@ namespace Programming_Practice
             }
             else
             {
-                SetControlBlank();
-                txtLibraryAnswer.Text = "Error Message: - ID \"" + nudLibraryID.Value + "\" does not Exsist";
+                SetLibraryControlBlank();
+                lblLibraryMessage.Text = "Message: - ID \"" + nudLibraryID.Value + "\" does not Exsist";
             }
         }
         private void NudLibraryID_ValueChanged(object sender, EventArgs e)
@@ -70,10 +71,6 @@ namespace Programming_Practice
         {
             if (ckbLibraryAutoFunctionaility.Checked)
             {
-                //int log_ID = Convert.ToInt32(nudLibraryID.Value);
-                //Log log = dbContext.Logs.OrderBy(x => x.Chapter_ID).FirstOrDefault(x => x.Chapter_ID == ID && x.ID >= log_ID);
-                //if (log == null)
-                //    log = dbContext.Logs.OrderBy(x => x.Chapter_ID).FirstOrDefault(x => x.Chapter_ID == ID);
                 int ID = ComboboxKVP.GetIDFromComboBox(combLibraryQuestion);
                 if (ID > 0)
                 {
@@ -82,18 +79,10 @@ namespace Programming_Practice
                 }
             }
         }
-        //private void GvLibraryTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    int index = e.RowIndex;
-        //    if (index != -1)
-        //    {
-        //        DataGridViewRow selectedrow = gvLibraryTable.Rows[index];
-        //        nudLibraryID.Value = Convert.ToInt32(selectedrow.Cells[0].Value);
-        //    }
-        //}
         private void BtnLibraryInsert_Click(object sender, EventArgs e)
         {
             Log log = new Log();
+            lblLibraryLogID.Text = "Message : Question Inserted Successfully";
             InsertUpdateLog(ref log);
             dbContext.Logs.Add(log);
             dbContext.SaveChanges();
@@ -103,6 +92,7 @@ namespace Programming_Practice
         {
             int ID = Convert.ToInt32(nudLibraryID.Value);
             Log log = dbContext.Logs.FirstOrDefault(x => x.ID == ID);
+            lblLibraryLogID.Text = "Message : Question Updated Successfully";
             InsertUpdateLog(ref log);
             dbContext.SaveChanges();
         }
@@ -115,9 +105,25 @@ namespace Programming_Practice
 
             int ID = Convert.ToInt32(nudLibraryID.Value);
             Log log = dbContext.Logs.FirstOrDefault(x => x.ID == ID);
-            dbContext.Logs.Remove(log);
-            dbContext.SaveChanges();
-            SetControlBlank();
+            if (log != null)
+            {
+                if (Prompt.ShowDialog("Progress\r\nRelated to ID = " + log.ID + " Name = " + log.Question))
+                {
+                    dbContext.Logs.Remove(log);
+                    dbContext.SaveChanges();
+                    SetLibraryControlBlank();
+                    lblLibraryMessage.Text = "Message : Question Deleted Successfully";
+                }
+                else
+                {
+                    lblLibraryMessage.Text = "Message : Question not Deleted";
+                }
+            }
+            else
+            {
+                lblLibraryMessage.Text = "Message : Question not Exsist";
+            }
+
         }
     }
 }

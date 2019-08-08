@@ -83,19 +83,26 @@ namespace Programming_Practice
         }
         private void BtnUsersDelete_Click(object sender, EventArgs e)
         {
-            User user = dbContext.Users.FirstOrDefault(x => x.ID == numUsersID.Value);
+            User user = dbContext.Users.SingleOrDefault(x => x.ID == numUsersID.Value);
             if (user != null)
             {
-                dbContext.Users.Remove(user);
-                dbContext.SaveChanges();
-                BlankUser();
-                lblUsersMessage.Text = "Message : User with ID = " + user.ID + " User Name = " + user.Name + " Deleted";
+                
+                if(Prompt.ShowDialog("Test } \r\nRelated to ID = " + user.ID + " Name = " + user.Name ))
+                {
+                    dbContext.Users.Remove(user);
+                    dbContext.SaveChanges();
+                    BlankUser();
+                    lblUsersMessage.Text = "Message : User Deleted Successfuly";
+                }
+                else
+                {
+                    lblUsersMessage.Text = "Message : User with ID = " + user.ID + " User Name = " + user.Name + " Not Deleted";
+                }
             }
             else
             {
-                lblUsersMessage.Text = "Message : User with ID = " + numUsersID.Value + " User Name = " + user.Name + " Not Found";
+                lblUsersMessage.Text = "Message : User with ID = " + numUsersID.Value + " Not Found";
             }
-
         }
     }
 }

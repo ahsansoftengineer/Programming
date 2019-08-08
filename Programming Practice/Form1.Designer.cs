@@ -68,6 +68,7 @@
             this.txtLogInUserName = new System.Windows.Forms.TextBox();
             this.btnLogInVerify = new System.Windows.Forms.Button();
             this.tpTest = new System.Windows.Forms.TabPage();
+            this.ckbTestShowAnswer = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -197,7 +198,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnUsersUpdate = new System.Windows.Forms.Button();
             this.btnUsersInsert = new System.Windows.Forms.Button();
-            this.ckbTestShowAnswer = new System.Windows.Forms.CheckBox();
+            this.lblLibraryMessage = new System.Windows.Forms.Label();
             this.TabControlProgramming.SuspendLayout();
             this.tpLogIn.SuspendLayout();
             this.pnlLogInChangePassword.SuspendLayout();
@@ -542,6 +543,17 @@
             this.tpTest.Size = new System.Drawing.Size(914, 594);
             this.tpTest.TabIndex = 2;
             this.tpTest.Text = "Test";
+            // 
+            // ckbTestShowAnswer
+            // 
+            this.ckbTestShowAnswer.AutoSize = true;
+            this.ckbTestShowAnswer.ForeColor = System.Drawing.Color.Red;
+            this.ckbTestShowAnswer.Location = new System.Drawing.Point(492, 161);
+            this.ckbTestShowAnswer.Name = "ckbTestShowAnswer";
+            this.ckbTestShowAnswer.Size = new System.Drawing.Size(125, 24);
+            this.ckbTestShowAnswer.TabIndex = 45;
+            this.ckbTestShowAnswer.Text = "Show Answer";
+            this.ckbTestShowAnswer.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -1133,6 +1145,7 @@
             // tpLibrary
             // 
             this.tpLibrary.BackColor = System.Drawing.Color.Black;
+            this.tpLibrary.Controls.Add(this.lblLibraryMessage);
             this.tpLibrary.Controls.Add(this.combLibraryQuestion);
             this.tpLibrary.Controls.Add(this.ckbLibraryAutoFunctionaility);
             this.tpLibrary.Controls.Add(this.btnLibraryDelete);
@@ -2568,16 +2581,16 @@
             this.btnUsersInsert.UseVisualStyleBackColor = false;
             this.btnUsersInsert.Click += new System.EventHandler(this.BtnUsersInsert_Click);
             // 
-            // ckbTestShowAnswer
+            // lblLibraryMessage
             // 
-            this.ckbTestShowAnswer.AutoSize = true;
-            this.ckbTestShowAnswer.ForeColor = System.Drawing.Color.Red;
-            this.ckbTestShowAnswer.Location = new System.Drawing.Point(492, 161);
-            this.ckbTestShowAnswer.Name = "ckbTestShowAnswer";
-            this.ckbTestShowAnswer.Size = new System.Drawing.Size(125, 24);
-            this.ckbTestShowAnswer.TabIndex = 45;
-            this.ckbTestShowAnswer.Text = "Show Answer";
-            this.ckbTestShowAnswer.UseVisualStyleBackColor = true;
+            this.lblLibraryMessage.AutoSize = true;
+            this.lblLibraryMessage.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibraryMessage.ForeColor = System.Drawing.Color.Lime;
+            this.lblLibraryMessage.Location = new System.Drawing.Point(361, 314);
+            this.lblLibraryMessage.Name = "lblLibraryMessage";
+            this.lblLibraryMessage.Size = new System.Drawing.Size(75, 23);
+            this.lblLibraryMessage.TabIndex = 45;
+            this.lblLibraryMessage.Text = "Message";
             // 
             // Form1
             // 
@@ -2781,6 +2794,7 @@
         private System.Windows.Forms.CheckBox ckbLibraryAutoFunctionaility;
         private System.Windows.Forms.ComboBox combLibraryQuestion;
         private System.Windows.Forms.CheckBox ckbTestShowAnswer;
+        private System.Windows.Forms.Label lblLibraryMessage;
     }
 }
 

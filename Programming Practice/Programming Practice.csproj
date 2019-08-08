@@ -83,6 +83,7 @@
       <DependentUpon>Programming Model.tt</DependentUpon>
     </Compile>
     <Compile Include="ProgressOverRideClass.cs" />
+    <Compile Include="Prompt.cs" />
     <Compile Include="Search.cs">
       <SubType>Form</SubType>
     </Compile>
