@@ -103,6 +103,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpLibrary = new System.Windows.Forms.TabPage();
+            this.lblLibraryMessage = new System.Windows.Forms.Label();
             this.combLibraryQuestion = new System.Windows.Forms.ComboBox();
             this.ckbLibraryAutoFunctionaility = new System.Windows.Forms.CheckBox();
             this.btnLibraryDelete = new System.Windows.Forms.Button();
@@ -198,7 +199,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnUsersUpdate = new System.Windows.Forms.Button();
             this.btnUsersInsert = new System.Windows.Forms.Button();
-            this.lblLibraryMessage = new System.Windows.Forms.Label();
+            this.tpSession = new System.Windows.Forms.TabPage();
+            this.tpMCQsTest = new System.Windows.Forms.TabPage();
+            this.tpTeacherCorner = new System.Windows.Forms.TabPage();
+            this.tpTeacher = new System.Windows.Forms.TabPage();
+            this.tpStudent = new System.Windows.Forms.TabPage();
             this.TabControlProgramming.SuspendLayout();
             this.tpLogIn.SuspendLayout();
             this.pnlLogInChangePassword.SuspendLayout();
@@ -238,6 +243,11 @@
             this.TabControlProgramming.Controls.Add(this.tpSubject);
             this.TabControlProgramming.Controls.Add(this.tpChapter);
             this.TabControlProgramming.Controls.Add(this.tpUser);
+            this.TabControlProgramming.Controls.Add(this.tpSession);
+            this.TabControlProgramming.Controls.Add(this.tpMCQsTest);
+            this.TabControlProgramming.Controls.Add(this.tpTeacherCorner);
+            this.TabControlProgramming.Controls.Add(this.tpTeacher);
+            this.TabControlProgramming.Controls.Add(this.tpStudent);
             this.TabControlProgramming.HotTrack = true;
             this.TabControlProgramming.Location = new System.Drawing.Point(1, 0);
             this.TabControlProgramming.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -246,7 +256,7 @@
             this.TabControlProgramming.Padding = new System.Drawing.Point(20, 8);
             this.TabControlProgramming.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TabControlProgramming.SelectedIndex = 0;
-            this.TabControlProgramming.Size = new System.Drawing.Size(922, 637);
+            this.TabControlProgramming.Size = new System.Drawing.Size(929, 627);
             this.TabControlProgramming.TabIndex = 0;
             this.TabControlProgramming.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabControlProgramming_Selecting);
             // 
@@ -264,11 +274,11 @@
             this.tpLogIn.Controls.Add(this.txtLogInPassword);
             this.tpLogIn.Controls.Add(this.txtLogInUserName);
             this.tpLogIn.Controls.Add(this.btnLogInVerify);
-            this.tpLogIn.Location = new System.Drawing.Point(4, 39);
+            this.tpLogIn.Location = new System.Drawing.Point(4, 74);
             this.tpLogIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpLogIn.Name = "tpLogIn";
             this.tpLogIn.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpLogIn.Size = new System.Drawing.Size(914, 594);
+            this.tpLogIn.Size = new System.Drawing.Size(921, 561);
             this.tpLogIn.TabIndex = 0;
             this.tpLogIn.Text = "Log In";
             // 
@@ -283,7 +293,7 @@
             this.btnLogLogOut.ForeColor = System.Drawing.Color.Red;
             this.btnLogLogOut.Location = new System.Drawing.Point(812, 8);
             this.btnLogLogOut.Name = "btnLogLogOut";
-            this.btnLogLogOut.Size = new System.Drawing.Size(95, 69);
+            this.btnLogLogOut.Size = new System.Drawing.Size(102, 69);
             this.btnLogLogOut.TabIndex = 76;
             this.btnLogLogOut.Text = "Log Out";
             this.btnLogLogOut.UseVisualStyleBackColor = false;
@@ -536,11 +546,11 @@
             this.tpTest.Controls.Add(this.lblQuestions);
             this.tpTest.Controls.Add(this.lblTestQuestionID);
             this.tpTest.Controls.Add(this.lblTestStartofEnd);
-            this.tpTest.Location = new System.Drawing.Point(4, 39);
+            this.tpTest.Location = new System.Drawing.Point(4, 74);
             this.tpTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpTest.Name = "tpTest";
             this.tpTest.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpTest.Size = new System.Drawing.Size(914, 594);
+            this.tpTest.Size = new System.Drawing.Size(921, 561);
             this.tpTest.TabIndex = 2;
             this.tpTest.Text = "Test";
             // 
@@ -641,7 +651,7 @@
             this.ckbTestIknow.AutoSize = true;
             this.ckbTestIknow.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbTestIknow.ForeColor = System.Drawing.Color.Yellow;
-            this.ckbTestIknow.Location = new System.Drawing.Point(206, 551);
+            this.ckbTestIknow.Location = new System.Drawing.Point(206, 514);
             this.ckbTestIknow.Name = "ckbTestIknow";
             this.ckbTestIknow.Size = new System.Drawing.Size(116, 35);
             this.ckbTestIknow.TabIndex = 39;
@@ -722,7 +732,7 @@
             this.txtTestAnswer.Multiline = true;
             this.txtTestAnswer.Name = "txtTestAnswer";
             this.txtTestAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTestAnswer.Size = new System.Drawing.Size(902, 352);
+            this.txtTestAnswer.Size = new System.Drawing.Size(909, 315);
             this.txtTestAnswer.TabIndex = 7;
             // 
             // txtTestQuestion
@@ -737,7 +747,7 @@
             this.txtTestQuestion.Multiline = true;
             this.txtTestQuestion.Name = "txtTestQuestion";
             this.txtTestQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTestQuestion.Size = new System.Drawing.Size(901, 82);
+            this.txtTestQuestion.Size = new System.Drawing.Size(908, 82);
             this.txtTestQuestion.TabIndex = 5;
             // 
             // btnTestPrevious
@@ -749,7 +759,7 @@
             this.btnTestPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTestPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestPrevious.ForeColor = System.Drawing.Color.Red;
-            this.btnTestPrevious.Location = new System.Drawing.Point(15, 543);
+            this.btnTestPrevious.Location = new System.Drawing.Point(15, 506);
             this.btnTestPrevious.Name = "btnTestPrevious";
             this.btnTestPrevious.Size = new System.Drawing.Size(90, 49);
             this.btnTestPrevious.TabIndex = 35;
@@ -766,7 +776,7 @@
             this.btnTestNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTestNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestNext.ForeColor = System.Drawing.Color.Red;
-            this.btnTestNext.Location = new System.Drawing.Point(111, 543);
+            this.btnTestNext.Location = new System.Drawing.Point(111, 506);
             this.btnTestNext.Name = "btnTestNext";
             this.btnTestNext.Size = new System.Drawing.Size(89, 49);
             this.btnTestNext.TabIndex = 36;
@@ -779,7 +789,7 @@
             this.pbTestAttempt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pbTestAttempt.BackColor = System.Drawing.Color.Black;
             this.pbTestAttempt.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.pbTestAttempt.Location = new System.Drawing.Point(328, 549);
+            this.pbTestAttempt.Location = new System.Drawing.Point(328, 512);
             this.pbTestAttempt.MarqueeAnimationSpeed = 10;
             this.pbTestAttempt.Maximum = 20;
             this.pbTestAttempt.Name = "pbTestAttempt";
@@ -817,7 +827,7 @@
             this.lblTestStartofEnd.AutoSize = true;
             this.lblTestStartofEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.lblTestStartofEnd.ForeColor = System.Drawing.Color.Lime;
-            this.lblTestStartofEnd.Location = new System.Drawing.Point(706, 547);
+            this.lblTestStartofEnd.Location = new System.Drawing.Point(713, 510);
             this.lblTestStartofEnd.MinimumSize = new System.Drawing.Size(107, 39);
             this.lblTestStartofEnd.Name = "lblTestStartofEnd";
             this.lblTestStartofEnd.Size = new System.Drawing.Size(107, 39);
@@ -831,11 +841,11 @@
             this.tpProgress.Controls.Add(this.combProgressChapter);
             this.tpProgress.Controls.Add(this.combProgressSubjects);
             this.tpProgress.Controls.Add(this.gvSearchRecord);
-            this.tpProgress.Location = new System.Drawing.Point(4, 39);
+            this.tpProgress.Location = new System.Drawing.Point(4, 74);
             this.tpProgress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpProgress.Name = "tpProgress";
             this.tpProgress.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpProgress.Size = new System.Drawing.Size(914, 594);
+            this.tpProgress.Size = new System.Drawing.Size(921, 561);
             this.tpProgress.TabIndex = 3;
             this.tpProgress.Text = "Progress";
             // 
@@ -930,7 +940,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvSearchRecord.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvSearchRecord.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gvSearchRecord.Location = new System.Drawing.Point(7, 45);
+            this.gvSearchRecord.Location = new System.Drawing.Point(7, 42);
             this.gvSearchRecord.Name = "gvSearchRecord";
             this.gvSearchRecord.ReadOnly = true;
             this.gvSearchRecord.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -944,7 +954,7 @@
             this.gvSearchRecord.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gvSearchRecord.RowHeadersVisible = false;
             this.gvSearchRecord.RowTemplate.Height = 10;
-            this.gvSearchRecord.Size = new System.Drawing.Size(900, 548);
+            this.gvSearchRecord.Size = new System.Drawing.Size(907, 497);
             this.gvSearchRecord.TabIndex = 16;
             this.gvSearchRecord.TabStop = false;
             // 
@@ -989,11 +999,11 @@
             this.tpSearch.Controls.Add(this.lblSearchTotalQuestion);
             this.tpSearch.Controls.Add(this.combSearchSubject);
             this.tpSearch.Controls.Add(this.gvSearch);
-            this.tpSearch.Location = new System.Drawing.Point(4, 39);
+            this.tpSearch.Location = new System.Drawing.Point(4, 74);
             this.tpSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpSearch.Name = "tpSearch";
             this.tpSearch.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpSearch.Size = new System.Drawing.Size(914, 594);
+            this.tpSearch.Size = new System.Drawing.Size(921, 549);
             this.tpSearch.TabIndex = 4;
             this.tpSearch.Text = "Search";
             // 
@@ -1100,7 +1110,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gvSearch.DefaultCellStyle = dataGridViewCellStyle9;
             this.gvSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gvSearch.Location = new System.Drawing.Point(7, 47);
+            this.gvSearch.Location = new System.Drawing.Point(0, 42);
             this.gvSearch.Name = "gvSearch";
             this.gvSearch.ReadOnly = true;
             this.gvSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -1114,7 +1124,7 @@
             this.gvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.gvSearch.RowHeadersVisible = false;
             this.gvSearch.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvSearch.Size = new System.Drawing.Size(900, 539);
+            this.gvSearch.Size = new System.Drawing.Size(907, 504);
             this.gvSearch.TabIndex = 4;
             this.gvSearch.TabStop = false;
             this.gvSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvSearch_CellClick);
@@ -1173,13 +1183,24 @@
             this.tpLibrary.Controls.Add(this.btnLibraryUpdate);
             this.tpLibrary.Controls.Add(this.btnLibraryInsert);
             this.tpLibrary.Controls.Add(this.btnLibraryGetData);
-            this.tpLibrary.Location = new System.Drawing.Point(4, 39);
+            this.tpLibrary.Location = new System.Drawing.Point(4, 74);
             this.tpLibrary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpLibrary.Name = "tpLibrary";
             this.tpLibrary.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpLibrary.Size = new System.Drawing.Size(914, 594);
+            this.tpLibrary.Size = new System.Drawing.Size(921, 549);
             this.tpLibrary.TabIndex = 1;
             this.tpLibrary.Text = "Library";
+            // 
+            // lblLibraryMessage
+            // 
+            this.lblLibraryMessage.AutoSize = true;
+            this.lblLibraryMessage.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibraryMessage.ForeColor = System.Drawing.Color.Lime;
+            this.lblLibraryMessage.Location = new System.Drawing.Point(361, 314);
+            this.lblLibraryMessage.Name = "lblLibraryMessage";
+            this.lblLibraryMessage.Size = new System.Drawing.Size(75, 23);
+            this.lblLibraryMessage.TabIndex = 45;
+            this.lblLibraryMessage.Text = "Message";
             // 
             // combLibraryQuestion
             // 
@@ -1198,7 +1219,7 @@
             this.combLibraryQuestion.IntegralHeight = false;
             this.combLibraryQuestion.Location = new System.Drawing.Point(17, 340);
             this.combLibraryQuestion.Name = "combLibraryQuestion";
-            this.combLibraryQuestion.Size = new System.Drawing.Size(546, 31);
+            this.combLibraryQuestion.Size = new System.Drawing.Size(553, 31);
             this.combLibraryQuestion.TabIndex = 10;
             this.combLibraryQuestion.ValueMember = "ID";
             this.combLibraryQuestion.SelectedIndexChanged += new System.EventHandler(this.CombLibraryQuestion_SelectedIndexChanged);
@@ -1210,7 +1231,7 @@
             this.ckbLibraryAutoFunctionaility.Checked = true;
             this.ckbLibraryAutoFunctionaility.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbLibraryAutoFunctionaility.ForeColor = System.Drawing.Color.Red;
-            this.ckbLibraryAutoFunctionaility.Location = new System.Drawing.Point(686, 13);
+            this.ckbLibraryAutoFunctionaility.Location = new System.Drawing.Point(693, 13);
             this.ckbLibraryAutoFunctionaility.Name = "ckbLibraryAutoFunctionaility";
             this.ckbLibraryAutoFunctionaility.Size = new System.Drawing.Size(221, 24);
             this.ckbLibraryAutoFunctionaility.TabIndex = 7;
@@ -1225,7 +1246,7 @@
             this.btnLibraryDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibraryDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibraryDelete.ForeColor = System.Drawing.Color.Blue;
-            this.btnLibraryDelete.Location = new System.Drawing.Point(741, 341);
+            this.btnLibraryDelete.Location = new System.Drawing.Point(748, 341);
             this.btnLibraryDelete.Name = "btnLibraryDelete";
             this.btnLibraryDelete.Size = new System.Drawing.Size(80, 31);
             this.btnLibraryDelete.TabIndex = 44;
@@ -1249,7 +1270,7 @@
             this.txtLibraryDescription.Multiline = true;
             this.txtLibraryDescription.Name = "txtLibraryDescription";
             this.txtLibraryDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLibraryDescription.Size = new System.Drawing.Size(542, 152);
+            this.txtLibraryDescription.Size = new System.Drawing.Size(549, 152);
             this.txtLibraryDescription.TabIndex = 9;
             // 
             // Answer
@@ -1399,12 +1420,12 @@
             this.txtLibraryAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLibraryAnswer.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLibraryAnswer.ForeColor = System.Drawing.Color.Aqua;
-            this.txtLibraryAnswer.Location = new System.Drawing.Point(17, 392);
+            this.txtLibraryAnswer.Location = new System.Drawing.Point(14, 400);
             this.txtLibraryAnswer.MaxLength = 4000;
             this.txtLibraryAnswer.Multiline = true;
             this.txtLibraryAnswer.Name = "txtLibraryAnswer";
             this.txtLibraryAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtLibraryAnswer.Size = new System.Drawing.Size(890, 194);
+            this.txtLibraryAnswer.Size = new System.Drawing.Size(897, 146);
             this.txtLibraryAnswer.TabIndex = 11;
             // 
             // txtLibraryHint2
@@ -1417,7 +1438,7 @@
             this.txtLibraryHint2.ForeColor = System.Drawing.Color.Aqua;
             this.txtLibraryHint2.Location = new System.Drawing.Point(365, 40);
             this.txtLibraryHint2.Name = "txtLibraryHint2";
-            this.txtLibraryHint2.Size = new System.Drawing.Size(542, 29);
+            this.txtLibraryHint2.Size = new System.Drawing.Size(549, 29);
             this.txtLibraryHint2.TabIndex = 7;
             // 
             // txtLibraryHint1
@@ -1441,7 +1462,7 @@
             this.txtLibraryHint3.ForeColor = System.Drawing.Color.Aqua;
             this.txtLibraryHint3.Location = new System.Drawing.Point(365, 100);
             this.txtLibraryHint3.Name = "txtLibraryHint3";
-            this.txtLibraryHint3.Size = new System.Drawing.Size(542, 29);
+            this.txtLibraryHint3.Size = new System.Drawing.Size(549, 29);
             this.txtLibraryHint3.TabIndex = 8;
             // 
             // lblAnythingElse
@@ -1540,7 +1561,7 @@
             this.btnLibraryUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibraryUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibraryUpdate.ForeColor = System.Drawing.Color.Blue;
-            this.btnLibraryUpdate.Location = new System.Drawing.Point(655, 341);
+            this.btnLibraryUpdate.Location = new System.Drawing.Point(662, 341);
             this.btnLibraryUpdate.Name = "btnLibraryUpdate";
             this.btnLibraryUpdate.Size = new System.Drawing.Size(80, 31);
             this.btnLibraryUpdate.TabIndex = 13;
@@ -1556,7 +1577,7 @@
             this.btnLibraryInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibraryInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibraryInsert.ForeColor = System.Drawing.Color.Blue;
-            this.btnLibraryInsert.Location = new System.Drawing.Point(569, 340);
+            this.btnLibraryInsert.Location = new System.Drawing.Point(576, 340);
             this.btnLibraryInsert.Name = "btnLibraryInsert";
             this.btnLibraryInsert.Size = new System.Drawing.Size(80, 31);
             this.btnLibraryInsert.TabIndex = 12;
@@ -1572,7 +1593,7 @@
             this.btnLibraryGetData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibraryGetData.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibraryGetData.ForeColor = System.Drawing.Color.Blue;
-            this.btnLibraryGetData.Location = new System.Drawing.Point(827, 340);
+            this.btnLibraryGetData.Location = new System.Drawing.Point(834, 340);
             this.btnLibraryGetData.Name = "btnLibraryGetData";
             this.btnLibraryGetData.Size = new System.Drawing.Size(80, 31);
             this.btnLibraryGetData.TabIndex = 14;
@@ -1601,10 +1622,10 @@
             this.tpSubject.Controls.Add(this.dtpSubjectStart);
             this.tpSubject.Controls.Add(this.txtSubjectDescription);
             this.tpSubject.Controls.Add(this.txtSubjectName);
-            this.tpSubject.Location = new System.Drawing.Point(4, 39);
+            this.tpSubject.Location = new System.Drawing.Point(4, 74);
             this.tpSubject.Name = "tpSubject";
             this.tpSubject.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSubject.Size = new System.Drawing.Size(914, 594);
+            this.tpSubject.Size = new System.Drawing.Size(921, 549);
             this.tpSubject.TabIndex = 6;
             this.tpSubject.Text = "Subject";
             // 
@@ -1650,7 +1671,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvSubject.DefaultCellStyle = dataGridViewCellStyle13;
             this.gvSubject.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gvSubject.Location = new System.Drawing.Point(11, 404);
+            this.gvSubject.Location = new System.Drawing.Point(7, 387);
             this.gvSubject.Name = "gvSubject";
             this.gvSubject.ReadOnly = true;
             this.gvSubject.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -1664,7 +1685,7 @@
             this.gvSubject.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.gvSubject.RowHeadersVisible = false;
             this.gvSubject.RowTemplate.Height = 10;
-            this.gvSubject.Size = new System.Drawing.Size(897, 189);
+            this.gvSubject.Size = new System.Drawing.Size(904, 156);
             this.gvSubject.TabIndex = 10;
             this.gvSubject.TabStop = false;
             this.gvSubject.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvSubject_CellClick);
@@ -1970,10 +1991,10 @@
             this.tpChapter.Controls.Add(this.nudChapterChapterNo);
             this.tpChapter.Controls.Add(this.txtChapterDescrption);
             this.tpChapter.Controls.Add(this.txtChapterChapterName);
-            this.tpChapter.Location = new System.Drawing.Point(4, 39);
+            this.tpChapter.Location = new System.Drawing.Point(4, 74);
             this.tpChapter.Name = "tpChapter";
             this.tpChapter.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChapter.Size = new System.Drawing.Size(914, 594);
+            this.tpChapter.Size = new System.Drawing.Size(921, 549);
             this.tpChapter.TabIndex = 7;
             this.tpChapter.Text = "Chapter";
             // 
@@ -2031,7 +2052,7 @@
             this.gvChapter.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.gvChapter.RowHeadersVisible = false;
             this.gvChapter.RowTemplate.Height = 10;
-            this.gvChapter.Size = new System.Drawing.Size(897, 225);
+            this.gvChapter.Size = new System.Drawing.Size(904, 180);
             this.gvChapter.TabIndex = 9;
             this.gvChapter.TabStop = false;
             this.gvChapter.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvChapter_CellClick);
@@ -2312,10 +2333,10 @@
             this.tpUser.Controls.Add(this.label3);
             this.tpUser.Controls.Add(this.btnUsersUpdate);
             this.tpUser.Controls.Add(this.btnUsersInsert);
-            this.tpUser.Location = new System.Drawing.Point(4, 39);
+            this.tpUser.Location = new System.Drawing.Point(4, 74);
             this.tpUser.Name = "tpUser";
             this.tpUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUser.Size = new System.Drawing.Size(914, 594);
+            this.tpUser.Size = new System.Drawing.Size(921, 549);
             this.tpUser.TabIndex = 5;
             this.tpUser.Text = "Users";
             // 
@@ -2581,23 +2602,62 @@
             this.btnUsersInsert.UseVisualStyleBackColor = false;
             this.btnUsersInsert.Click += new System.EventHandler(this.BtnUsersInsert_Click);
             // 
-            // lblLibraryMessage
+            // tpSession
             // 
-            this.lblLibraryMessage.AutoSize = true;
-            this.lblLibraryMessage.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibraryMessage.ForeColor = System.Drawing.Color.Lime;
-            this.lblLibraryMessage.Location = new System.Drawing.Point(361, 314);
-            this.lblLibraryMessage.Name = "lblLibraryMessage";
-            this.lblLibraryMessage.Size = new System.Drawing.Size(75, 23);
-            this.lblLibraryMessage.TabIndex = 45;
-            this.lblLibraryMessage.Text = "Message";
+            this.tpSession.BackColor = System.Drawing.Color.Black;
+            this.tpSession.Location = new System.Drawing.Point(4, 74);
+            this.tpSession.Name = "tpSession";
+            this.tpSession.Padding = new System.Windows.Forms.Padding(3);
+            this.tpSession.Size = new System.Drawing.Size(921, 549);
+            this.tpSession.TabIndex = 8;
+            this.tpSession.Text = "Session";
+            // 
+            // tpMCQsTest
+            // 
+            this.tpMCQsTest.BackColor = System.Drawing.Color.Black;
+            this.tpMCQsTest.Location = new System.Drawing.Point(4, 74);
+            this.tpMCQsTest.Name = "tpMCQsTest";
+            this.tpMCQsTest.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMCQsTest.Size = new System.Drawing.Size(921, 549);
+            this.tpMCQsTest.TabIndex = 9;
+            this.tpMCQsTest.Text = "MCQs Test";
+            // 
+            // tpTeacherCorner
+            // 
+            this.tpTeacherCorner.BackColor = System.Drawing.Color.Black;
+            this.tpTeacherCorner.Location = new System.Drawing.Point(4, 74);
+            this.tpTeacherCorner.Name = "tpTeacherCorner";
+            this.tpTeacherCorner.Padding = new System.Windows.Forms.Padding(3);
+            this.tpTeacherCorner.Size = new System.Drawing.Size(921, 549);
+            this.tpTeacherCorner.TabIndex = 10;
+            this.tpTeacherCorner.Text = "Teacher Corner";
+            // 
+            // tpTeacher
+            // 
+            this.tpTeacher.BackColor = System.Drawing.Color.Black;
+            this.tpTeacher.Location = new System.Drawing.Point(4, 74);
+            this.tpTeacher.Name = "tpTeacher";
+            this.tpTeacher.Padding = new System.Windows.Forms.Padding(3);
+            this.tpTeacher.Size = new System.Drawing.Size(921, 549);
+            this.tpTeacher.TabIndex = 11;
+            this.tpTeacher.Text = "Teacher";
+            // 
+            // tpStudent
+            // 
+            this.tpStudent.Location = new System.Drawing.Point(4, 74);
+            this.tpStudent.Name = "tpStudent";
+            this.tpStudent.Padding = new System.Windows.Forms.Padding(3);
+            this.tpStudent.Size = new System.Drawing.Size(921, 549);
+            this.tpStudent.TabIndex = 12;
+            this.tpStudent.Text = "Student";
+            this.tpStudent.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(928, 644);
+            this.ClientSize = new System.Drawing.Size(928, 625);
             this.Controls.Add(this.TabControlProgramming);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -2795,6 +2855,11 @@
         private System.Windows.Forms.ComboBox combLibraryQuestion;
         private System.Windows.Forms.CheckBox ckbTestShowAnswer;
         private System.Windows.Forms.Label lblLibraryMessage;
+        private System.Windows.Forms.TabPage tpSession;
+        private System.Windows.Forms.TabPage tpMCQsTest;
+        private System.Windows.Forms.TabPage tpTeacherCorner;
+        private System.Windows.Forms.TabPage tpTeacher;
+        private System.Windows.Forms.TabPage tpStudent;
     }
 }
 
