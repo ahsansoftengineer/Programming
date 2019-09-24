@@ -1,10 +1,25 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Programming_Practice
 {
     public partial class Form1
     {
+        public byte[] ImageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
+        public Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
         private void InsertUpdateUser(ref User user)
         {
             user.Name = txtUsersName.Text;
@@ -14,6 +29,8 @@ namespace Programming_Practice
             user.Hint = txtUsersHint.Text;
             user.EnrollmentDate = dtpUsersEnrollmentDate.Value;
             user.ExpiryDate = dtpUsersExpiryDate.Value;
+            if(userImage.Image != null)
+                user.Image = ImageToByteArray(userImage.Image);
         }
         private void InitializeUserControl(User user)
         {
@@ -25,6 +42,10 @@ namespace Programming_Practice
             txtUsersHint.Text = user.Hint;
             dtpUsersEnrollmentDate.Value = user.EnrollmentDate;
             dtpUsersExpiryDate.Value = user.ExpiryDate;
+            if (user.Image != null)
+                userImage.Image = ByteArrayToImage(user.Image);
+            else
+                userImage.Image = null;
         }
         private void BlankUser()
         {
@@ -41,13 +62,36 @@ namespace Programming_Practice
         {
             lblUsersMessage.Text = "Message : ";
             int id = Convert.ToInt32(numUsersID.Value);
-            User user =  dbContext.Users.FirstOrDefault(x => x.ID >= id);
+            User user = dbContext.Users.FirstOrDefault(x => x.ID >= id);
             if (user != null)
                 InitializeUserControl(user);
             else
             {
                 lblUsersMessage.Text = "Message : User Not Found";
                 BlankUser();
+            }
+        }
+        private void BtnSelectImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog opFile = new OpenFileDialog())
+            {
+                opFile.Title = "Select a Image";
+                opFile.Filter = "Images (*.JPG;*.JPEG;*.PNG)|*.JPG;*.JPEG;*.PNG";
+                if (opFile.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        userImage.Image = new Bitmap(opFile.OpenFile());
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show("Unable to open file " + exp.Message);
+                    }
+                }
+                else
+                {
+                    opFile.Dispose();
+                }
             }
         }
         private void BtnUsersInsert_Click(object sender, EventArgs e)
@@ -86,8 +130,8 @@ namespace Programming_Practice
             User user = dbContext.Users.SingleOrDefault(x => x.ID == numUsersID.Value);
             if (user != null)
             {
-                
-                if(Prompt.ShowDialog("Test } \r\nRelated to ID = " + user.ID + " Name = " + user.Name ))
+
+                if (Prompt.ShowDialog("Test } \r\nRelated to ID = " + user.ID + " Name = " + user.Name))
                 {
                     dbContext.Users.Remove(user);
                     dbContext.SaveChanges();

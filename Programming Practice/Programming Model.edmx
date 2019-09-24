@@ -63,8 +63,10 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="LogInID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_Type_ID" Type="int" Nullable="false" />
+          <Property Name="Image" Type="varbinary(max)" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Hint" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EnrollmentDate" Type="date" Nullable="false" />
@@ -240,7 +242,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LogInID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Hint" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -248,6 +250,8 @@
           <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Progresses" Relationship="Self.FK_Progress_User" FromRole="User" ToRole="Progress" />
+          <Property Name="User_Type_ID" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Chapter_Subject">
           <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
@@ -404,6 +408,8 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="ProgrammingsModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="User_Type_ID" ColumnName="User_Type_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="LogInID" ColumnName="LogInID" />

@@ -35,6 +35,8 @@ namespace Programming_Practice
             {
                 btnLogInShowControls.Visible = true;
                 Text = Currentuser.Name + " Welcome!";
+                if (Currentuser.Image != null)
+                    ImgLogInUserImage.Image = ByteArrayToImage(Currentuser.Image);
                 pbLogIn.Value = 100;
                 btnLogInVerify.Visible = false;
                 btnLogLogOut.Visible = true;

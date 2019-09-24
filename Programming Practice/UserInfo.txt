@@ -1,0 +1,25 @@
+﻿User Credentials and Its Role
+UserName		UserType			Password				Access of Tabs
+Admin			Administrator		admin@aam				User Type (All) Academy, Headmaster and below
+Ahsan			Headmaster			ahsan@headmaster		User Type Incharge and below
+Asim			Tester				asim@Tester				Only for Orgaizing Test
+Sumaya			Incharge			sumaya@incharge			User Type Teacher and below
+Yousuf			Teacher				yousuf@teacher			User Type Students, Attendance, Performance
+Obaid			Feader				obaid@Feader			One for Updating the Subjects, Chapters, Questions, MCQs, Students
+Ibrahim			Student				ibrahim@student			Log In, Change Password, Test, Progress, Search, Result
+
+Result is depends on the following Tests
+1. Daily
+2. Montly
+3. Weekly
+4. Semester
+5. Anualy
+
+Academy
+Headmaster
+Tester
+Incharge
+Teacher
+Feader
+Students
+

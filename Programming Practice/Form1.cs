@@ -87,13 +87,6 @@ namespace Programming_Practice
             TabControlProgramming.Controls.Remove(tpChapter);
             TabControlProgramming.Controls.Remove(tpLibrary);
             TabControlProgramming.Controls.Remove(tpUser);
-            //Hiding Teacher Controls
-            TabControlProgramming.Controls.Remove(tpTeacher);
-            TabControlProgramming.Controls.Remove(tpTeacherCorner);
-            TabControlProgramming.Controls.Remove(tpSession);
-            TabControlProgramming.Controls.Remove(tpMCQsTest);
-            //Hiding Student Control
-            TabControlProgramming.Controls.Remove(tpStudent);
             //Disabling Control on Failure of Log In
             pbLogIn.Visible = false;
             btnLogLogOut.Visible = false;
