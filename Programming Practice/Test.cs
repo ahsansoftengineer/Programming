@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Programming_Practice
 {
-    public partial class Form1
+    public partial class BaseForm
     {
         List<Log> tests = new List<Log>();
         private int LastAttempt = 0;

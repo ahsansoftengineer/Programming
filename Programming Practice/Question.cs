@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Programming_Practice
 {
-    public partial class Form1
+    public partial class BaseForm
     {
         private void SetLibraryControlBlank()
         {
@@ -82,17 +78,17 @@ namespace Programming_Practice
         private void BtnLibraryInsert_Click(object sender, EventArgs e)
         {
             Log log = new Log();
-            lblLibraryLogID.Text = "Message : Question Inserted Successfully";
             InsertUpdateLog(ref log);
             dbContext.Logs.Add(log);
             dbContext.SaveChanges();
             nudLibraryID.Value = dbContext.Logs.OrderByDescending(x => x.ID).FirstOrDefault().ID;
+            lblLibraryMessage.Text = "Message : Question Inserted Successfully";
         }
         private void BtnLibraryUpdate_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(nudLibraryID.Value);
             Log log = dbContext.Logs.FirstOrDefault(x => x.ID == ID);
-            lblLibraryLogID.Text = "Message : Question Updated Successfully";
+            lblLibraryMessage.Text = "Message : Question Updated Successfully";
             InsertUpdateLog(ref log);
             dbContext.SaveChanges();
         }

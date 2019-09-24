@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Programming_Practice
 {
-    public partial class Form1
+    public partial class BaseForm
     {
         private void CombProgressSubjects_SelectedIndexChanged(object sender, EventArgs e)
         {

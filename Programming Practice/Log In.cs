@@ -4,7 +4,7 @@ using System.Threading;
 using System.Windows.Forms;
 namespace Programming_Practice
 {
-    public partial class Form1
+    public partial class BaseForm
     {
         public User Currentuser { get; set; }
         private void RunOnUiThread(Action action)
@@ -65,18 +65,20 @@ namespace Programming_Practice
                     }
                     else
                     {
-                        //Showing the User MemberControl
                         RunOnUiThread(() => btnLogLogOut.Visible = true);
-                        TabControlAddTabPage(tpTest);
-                        TabControlAddTabPage(tpProgress);
+                        // Showing the Admin Controls
                         if (txtLogInUserName.Text == "Admin")
                         {
-                            //Showing the Admin Controls
-                            TabControlAddTabPage(tpLibrary);
                             TabControlAddTabPage(tpSubject);
                             TabControlAddTabPage(tpChapter);
-                            TabControlAddTabPage(tpUser);
+                            TabControlAddTabPage(tpQuestion);
                         }
+                        // Showing the User MemberControl
+                        TabControlAddTabPage(tpTest);
+                        TabControlAddTabPage(tpProgress);
+                        // Showing the Admin Controls
+                        if (txtLogInUserName.Text == "Admin")
+                            TabControlAddTabPage(tpUser);
                         LogInMessage("You have Logged In");
                         if (Currentuser.ExpiryDate < DateTime.Now.AddDays(5))
                             LogInMessage("Please change Your Password before it gets Expired \nExpiry Date = " + Currentuser.ExpiryDate);

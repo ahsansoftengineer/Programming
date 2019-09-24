@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Programming_Practice
 {
-    public partial class Form1 : Form
+    public partial class BaseForm : Form
     {
         string CurrentSubject = "";
         string CurrentChapter = "";
@@ -72,7 +68,7 @@ namespace Programming_Practice
             if (types.Count() > 0)
                 type.SelectedIndex = 0;
         }
-        public Form1()
+        public BaseForm()
         {
             InitializeComponent();
         }
@@ -83,9 +79,9 @@ namespace Programming_Practice
             TabControlProgramming.Controls.Remove(tpTest);
             TabControlProgramming.Controls.Remove(tpProgress);
             //Hiding the Admin Controls
+            TabControlProgramming.Controls.Remove(tpQuestion);
             TabControlProgramming.Controls.Remove(tpSubject);
             TabControlProgramming.Controls.Remove(tpChapter);
-            TabControlProgramming.Controls.Remove(tpLibrary);
             TabControlProgramming.Controls.Remove(tpUser);
             //Disabling Control on Failure of Log In
             pbLogIn.Visible = false;
@@ -120,7 +116,7 @@ namespace Programming_Practice
                 FillChapters(combSearchSubject, combSearchChapter);
             }
 
-            else if (e.TabPage.Text == "Library")
+            else if (e.TabPage == tpQuestion)
             {
                 FillSubject(combLibrarySubject);
                 FillChapters(combLibrarySubject, combLibraryChapters);
