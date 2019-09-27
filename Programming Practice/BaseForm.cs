@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Programming_Practice
 {
-
-    public partial class Form1 : Form
+    public partial class BaseForm : Form
     {
         string CurrentSubject = "";
         string CurrentChapter = "";
@@ -73,9 +68,29 @@ namespace Programming_Practice
             if (types.Count() > 0)
                 type.SelectedIndex = 0;
         }
-        public Form1()
+        public BaseForm()
         {
             InitializeComponent();
+        }
+        private void HideControls()
+        {
+            Currentuser = null;
+            //Hiding the User MemberControl
+            TabControlProgramming.Controls.Remove(tpTest);
+            TabControlProgramming.Controls.Remove(tpProgress);
+            //Hiding the Admin Controls
+            TabControlProgramming.Controls.Remove(tpQuestion);
+            TabControlProgramming.Controls.Remove(tpSubject);
+            TabControlProgramming.Controls.Remove(tpChapter);
+            TabControlProgramming.Controls.Remove(tpUser);
+            //Disabling Control on Failure of Log In
+            pbLogIn.Visible = false;
+            btnLogLogOut.Visible = false;
+            pnlLogInChangePassword.Visible = false;
+            btnLogInShowControls.Visible = false;
+            Text = "Welcome to Programming Practice";
+            //This Control needs to be Enabled when all the Controls are hidden
+            btnLogInVerify.Visible = true;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -101,7 +116,7 @@ namespace Programming_Practice
                 FillChapters(combSearchSubject, combSearchChapter);
             }
 
-            else if (e.TabPage.Text == "Library")
+            else if (e.TabPage == tpQuestion)
             {
                 FillSubject(combLibrarySubject);
                 FillChapters(combLibrarySubject, combLibraryChapters);

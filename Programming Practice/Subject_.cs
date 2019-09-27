@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Programming_Practice
 {
-    partial class Form1
+    partial class BaseForm
     {
         private void InsertUpdateSubject(ref Subject subject)
         {

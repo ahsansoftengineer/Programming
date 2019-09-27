@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Programming_Practice
 {
-    partial class Form1
+    partial class BaseForm
     {
         private void InsertUpdateChapter(ref Chapter chapter)
         {

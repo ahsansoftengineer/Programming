@@ -4,7 +4,7 @@ using System.Threading;
 using System.Windows.Forms;
 namespace Programming_Practice
 {
-    public partial class Form1
+    public partial class BaseForm
     {
         public User Currentuser { get; set; }
         private void RunOnUiThread(Action action)
@@ -28,26 +28,6 @@ namespace Programming_Practice
         {
             RunOnUiThread(() => lblLogInMessage.Text = "Message : " + Message);
         }
-        private void HideControls()
-        {
-            Currentuser = null;
-            //Hiding the User MemberControl
-            TabControlProgramming.Controls.Remove(tpTest);
-            TabControlProgramming.Controls.Remove(tpProgress);
-            //Hiding the Admin Controls
-            TabControlProgramming.Controls.Remove(tpSubject);
-            TabControlProgramming.Controls.Remove(tpChapter);
-            TabControlProgramming.Controls.Remove(tpLibrary);
-            TabControlProgramming.Controls.Remove(tpUser);
-            //Disabling Control on Failure of Log In
-            pbLogIn.Visible = false;
-            btnLogLogOut.Visible = false;
-            pnlLogInChangePassword.Visible = false;
-            btnLogInShowControls.Visible = false;
-            Text = "Welcome to Programming Practice";
-            //This Control needs to be Enabled when all the Controls are hidden
-            btnLogInVerify.Visible = true;
-        }
         private void DoThatOnCompleteofVerification()
         {
             txtLogInPassword.Text = "";
@@ -55,6 +35,8 @@ namespace Programming_Practice
             {
                 btnLogInShowControls.Visible = true;
                 Text = Currentuser.Name + " Welcome!";
+                if (Currentuser.Image != null)
+                    ImgLogInUserImage.Image = ByteArrayToImage(Currentuser.Image);
                 pbLogIn.Value = 100;
                 btnLogInVerify.Visible = false;
                 btnLogLogOut.Visible = true;
@@ -83,18 +65,20 @@ namespace Programming_Practice
                     }
                     else
                     {
-                        //Showing the User MemberControl
                         RunOnUiThread(() => btnLogLogOut.Visible = true);
-                        TabControlAddTabPage(tpTest);
-                        TabControlAddTabPage(tpProgress);
+                        // Showing the Admin Controls
                         if (txtLogInUserName.Text == "Admin")
                         {
-                            //Showing the Admin Controls
-                            TabControlAddTabPage(tpLibrary);
                             TabControlAddTabPage(tpSubject);
                             TabControlAddTabPage(tpChapter);
-                            TabControlAddTabPage(tpUser);
+                            TabControlAddTabPage(tpQuestion);
                         }
+                        // Showing the User MemberControl
+                        TabControlAddTabPage(tpTest);
+                        TabControlAddTabPage(tpProgress);
+                        // Showing the Admin Controls
+                        if (txtLogInUserName.Text == "Admin")
+                            TabControlAddTabPage(tpUser);
                         LogInMessage("You have Logged In");
                         if (Currentuser.ExpiryDate < DateTime.Now.AddDays(5))
                             LogInMessage("Please change Your Password before it gets Expired \nExpiry Date = " + Currentuser.ExpiryDate);

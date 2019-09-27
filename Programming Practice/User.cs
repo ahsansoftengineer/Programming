@@ -28,6 +28,8 @@ namespace Programming_Practice
         public System.DateTime EnrollmentDate { get; set; }
         public System.DateTime ExpiryDate { get; set; }
         public string Status { get; set; }
+        public int User_Type_ID { get; set; }
+        public byte[] Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Progress> Progresses { get; set; }
