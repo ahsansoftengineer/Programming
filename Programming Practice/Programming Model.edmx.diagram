@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="805ceab329ee4616882bf26321f5a1bb" Name="Diagram1">
-        <EntityTypeShape EntityType="ProgrammingsModel.Chapter" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgrammingsModel.Log" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgrammingsModel.Progress" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgrammingsModel.Subject" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgrammingsModel.Type" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProgrammingsModel.User" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingsModel.Chapter" Width="1.5" PointX="2.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingsModel.Log" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingsModel.Progress" Width="1.5" PointX="6.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingsModel.Subject" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingsModel.Type" Width="1.5" PointX="6.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgrammingsModel.User" Width="1.5" PointX="8.5" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="ProgrammingsModel.FK_Chapter_Subject" ManuallyRouted="false" />
         <AssociationConnector Association="ProgrammingsModel.FK_Log_Chapter" ManuallyRouted="false" />
         <AssociationConnector Association="ProgrammingsModel.FK_Log_Type" ManuallyRouted="false" />
